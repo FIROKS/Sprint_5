@@ -11,8 +11,6 @@ class Locators:
     WRONG_PASSWORD_MESSAGE = [By.XPATH, '//div[contains(@class, "input")]/input[@type="password"]/following::p[1]']
     # Поле Имя
     NAME = [By.XPATH, '//div[contains(@class, "input")]/label[text()="Имя"]/following-sibling::input']
-    
-
     # Ссылка "Личный Кабинет" на главной странице
     PROFILE_LINK = [By.XPATH, '//a[@href="/account"]']
     # Ссылка 'Зарегистрироваться' на странице входа

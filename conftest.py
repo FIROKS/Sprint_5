@@ -17,7 +17,6 @@ def driver():
     driver = webdriver.Chrome(options=options)
     driver.get(get_endpoint(Endpoints.MAIN_PAGE))
     yield driver
-
     driver.quit()
 
 @pytest.fixture
@@ -27,5 +26,4 @@ def login(driver):
     driver.find_element(*Locators.EMAIL).send_keys(Credentials.EXISTING_EMAIL)
     driver.find_element(*Locators.PASSWORD).send_keys(Credentials.CORRECT_PASSWORD)
     driver.find_element(*Locators.SIGN_IN_BUTTON).click()
-
     return driver
