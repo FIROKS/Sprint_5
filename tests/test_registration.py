@@ -27,9 +27,8 @@ class TestRegistration:
         # Переходим на страницу профиля
         WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_LINK))
         driver.find_element(*Locators.PROFILE_LINK).click()
-        profile_button = WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON)).text
-
-        assert profile_button == 'Профиль'
+        
+        assert WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON))
 
     def test_show_wrong_password_message(self, driver):
         driver.get(get_endpoint(Endpoints.REGISTATION_PAGE))

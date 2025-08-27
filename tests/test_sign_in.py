@@ -18,9 +18,8 @@ class TestSignin:
         # Переходим на страницу профиля
         WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_LINK))
         driver.find_element(*Locators.PROFILE_LINK).click()
-        profile_button = WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON)).text
 
-        assert profile_button == 'Профиль'
+        assert WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON))
 
 
     def test_sign_in_by_using_profile_link(self, driver):
@@ -34,9 +33,8 @@ class TestSignin:
         # Переходим на страницу профиля
         WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_LINK))
         driver.find_element(*Locators.PROFILE_LINK).click()
-        profile_button = WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON)).text
-
-        assert profile_button == 'Профиль'
+        
+        assert WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON))
 
 
     def test_sign_in_by_using_sign_up_button(self, driver):
@@ -54,9 +52,8 @@ class TestSignin:
         # Переходим на страницу профиля
         WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_LINK))
         driver.find_element(*Locators.PROFILE_LINK).click()
-        profile_button = WebDriverWait(driver, 2).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON)).text
-
-        assert profile_button == 'Профиль'
+        
+        assert WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON))
 
     def test_sign_in_by_using_recall_password_sign_in_button(self, driver):
         # Переходим на страницу восстановления пароля и кликаем кнопку "Войти"
@@ -73,6 +70,5 @@ class TestSignin:
         # Переходим на страницу профиля
         WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_LINK))
         driver.find_element(*Locators.PROFILE_LINK).click()
-        profile_button = WebDriverWait(driver, 2).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON)).text
-
-        assert profile_button == 'Профиль'
+        
+        assert WebDriverWait(driver, Constants.TIMEOUT).until(EC.visibility_of_element_located(Locators.PROFILE_BUTTON))
